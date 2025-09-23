@@ -15,7 +15,7 @@ class Todo{
       throw new Error("Payload invalide pour TodoDTO");
     }
     const { id, userId, title, completed } = payload;
-    return new TodoDTO({
+    return new Todo({
       id: Number(id),
       userId: Number(userId),
       title: String(title ?? ""),
@@ -27,5 +27,5 @@ class Todo{
 
 
 module.exports = {
-   theClass:Todo
+   Todo
 }
