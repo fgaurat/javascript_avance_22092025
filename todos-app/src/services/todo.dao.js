@@ -30,6 +30,20 @@ async function  findAll(){
     return todos
 }
 
-export {
-    findById,findAll
+async function save(todo) {
+    const response = await fetch(baseUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(todo)
+    })
+
+    const data = await response.json()
+
+    return Todo.fromJson(data)
+}
+
+export  {
+    findById,findAll,save
 }

@@ -2,14 +2,15 @@ import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 // import { TodoDAO } from './services/todo.dao.js'
-import { findAll } from './services/todo.dao.js'
+// import {findAll} from './services/todo.dao.js'
+import dao from './services/todo.dao.js'
 
 
 
 
 let lines = "";
 
-  const todos = await findAll()
+  const todos = await dao.findAll()
   for (const todo of todos) {
     lines += `
       <tr>
